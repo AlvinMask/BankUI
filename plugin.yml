@@ -1,0 +1,9 @@
+name: BankUI
+main: AlvinMask\BankUI\Main
+api: [2, 4]
+version: 1
+author: AlvinMask
+
+commands:
+ bankui:
+     description: Membuka menu BankUI (form)
