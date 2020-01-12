@@ -1,6 +1,6 @@
 name: BankUI
 main: AlvinMask\BankUI\Main
-api: [2, 4]
+api: [3, 4]
 version: 1
 author: AlvinMask
 
