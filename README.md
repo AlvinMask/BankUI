@@ -7,7 +7,7 @@ for PocketMine version 1.5.0 to 1.14.0 with api 3.0.0 to 4.0.0.
 
 Made by AlvinMask (me).
 
-# Featured
+# Feature
 
 - [x] Transfer Money UI (form)
 - [x] Check Self Money
