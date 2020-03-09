@@ -13,10 +13,10 @@ use AlvinMask\BankUI\Form\CustomForm;
 class Main extends PluginBase{
 
     public function onEnable(){
-     $this->getServer()->getLogger()->Info("Plugin Ini Dibuat Oleh AlvinMask");
+     $this->getServer()->getLogger()->Info("Plugin Made by AlvinMask");
      $plugin = $this->getServer()->getPluginManager()->getPlugin("EconomyAPI");
-     if(is_null($plugin)) {
-      $this->getLogger()->info("Harap Pasang Plugin EconomyAPI");
+     if(is_null($plugin)){
+      $this->getLogger()->info("Please Put EconomyAPI Plugin");
       $this->getServer()->shutdown();
      }
     }
@@ -59,12 +59,12 @@ class Main extends PluginBase{
        }
       }
      });
-     $form->setTitle("§f§lMenu BankUI");
-     $form->setContent("§a* §oHarap pilih menu berikutnya§r§f!");
-     $form->addButton("§0Transfer Money\n§f§oTap to open");
-     $form->addButton("§0Check Saldo Money\n§f§oTap to open");
-     $form->addButton("§0Melihat Money Player\n§f§oTap to open");
-     $form->addButton("§0Player Top Money\n§f§oTap to open");
+     $form->setTitle("§f§lBankUI Menu");
+     $form->setContent("§a* §oPlease choose the next menu§r§f!");
+     $form->addButton("§0Transfer money to player\n§f§oTap to open");
+     $form->addButton("§0See your money\n§f§oTap to open");
+     $form->addButton("§0Look player money\n§f§oTap to open");
+     $form->addButton("§0List player Top Money\n§f§oTap to open");
      $p->sendForm($form);
     }
 
@@ -74,18 +74,18 @@ class Main extends PluginBase{
        return;
       }
       if(trim($result[0]) === ""){
-       $p->sendMessage("§a* §oHarap isi nama player tujuan transfer money§r§f!");
+       $p->sendMessage("§a* §oPlease fill in the name of the player for the money transfer destination§r§f!");
        return;
       }
       if(trim($result[1]) === ""){
-       $p->sendMessage("§a* §oHarap isi jumlah money yang ingin ditransfer§r§f!");
+       $p->sendMessage("§a* §oPlease fill in the amount of money you want to transfer§r§f!");
        return;
       }
       $this->getServer()->getCommandMap()->dispatch($p, "pay ".$result[0]." ".$result[1]);
      });
-     $form->setTitle("§f§lMenu Transfer Money");
-     $form->addInput("§e§oNama Tujuan§r§f:");
-     $form->addInput("§e§oJumlah Money§r§f:");
+     $form->setTitle("§f§lTransfer Money Menu");
+     $form->addInput("§e§oDestination Name§r§f:");
+     $form->addInput("§e§oAmount of Money§r§f:");
      $p->sendForm($form);
     }
 
@@ -96,8 +96,8 @@ class Main extends PluginBase{
       }
       $this->getServer()->getCommandMap()->dispatch($p, "seemoney ".$result[0]);
      });
-     $form->setTitle("§f§lMenu Check Money Player");
-     $form->addInput("§e§oNama Player§r§f:");
+     $form->setTitle("§f§lSee Player Menu");
+     $form->addInput("§e§oDestination Name§r§f:");
      $p->sendForm($form);
     }
 
